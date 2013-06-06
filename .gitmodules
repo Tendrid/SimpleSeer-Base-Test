@@ -1,0 +1,3 @@
+[submodule "SimpleSeer"]
+	path = SimpleSeer
+	url = git@github.com:sightmachine/SimpleSeer.git
