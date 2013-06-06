@@ -13,6 +13,7 @@ before_script:
   - "sudo pip install gevent"
   - "sudo pip install path.py"
   - "sudo pip install python-dateutil"
+  - "sudo pip install pyyaml"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
