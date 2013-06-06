@@ -20,6 +20,8 @@ before_script:
   - "sudo pip install PIL"
   - "sudo apt-get install python-opencv"
   - "sudo pip install jsonpickle"
+  - "wget https://github.com/ingenuitas/SimpleSeer/zipball/master -O SimpleSeer.zip; unzip SimpleSeer.zip; mv ingenuitas-* SimpleSeer;"
+  - "cd SimpleSeer; sh scripts/setup.sh; cd .."
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
