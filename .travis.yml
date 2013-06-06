@@ -9,4 +9,4 @@ servies:
 before_script:
   - "npm i -g jasmine-node"
   - "npm i -g jasmine-jquery"
-script: "python ./SimpleSeer/setup.py develop"
+script: "sudo python ./SimpleSeer/setup.py develop"
