@@ -9,6 +9,7 @@ servies:
 before_script:
   - "npm i -g jasmine-node"
   - "npm i -g jasmine-jquery"
+  - "sudo apt-get update"
   - "sudo apt-get install libevent-dev"
   - "sudo pip install gevent"
   - "sudo pip install path.py"
