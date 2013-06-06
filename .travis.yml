@@ -15,6 +15,7 @@ before_script:
   - "sudo pip install python-dateutil"
   - "sudo pip install pyyaml"
   - "sudo pip install mongoengine"
+  - "sudo apt-get install python-pygame"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
