@@ -19,6 +19,7 @@ before_script:
   - "sudo apt-get install python-pygame"
   - "sudo pip install PIL"
   - "sudo apt-get install python-opencv"
+  - "sudo pip install jsonpickle"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
