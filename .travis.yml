@@ -11,5 +11,6 @@ before_script:
   - "npm i -g jasmine-jquery"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
+  - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
   - "simpleseer deploy"
   - "simpleseer build"
