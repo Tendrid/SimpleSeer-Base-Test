@@ -12,6 +12,7 @@ before_script:
   - "sudo apt-get install libevent-dev"
   - "sudo pip install gevent"
   - "sudo pip install path.py"
+  - "sudo pip install python-dateutil"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
