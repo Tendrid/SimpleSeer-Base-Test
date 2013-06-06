@@ -9,6 +9,7 @@ servies:
 before_script:
   - "npm i -g jasmine-node"
   - "npm i -g jasmine-jquery"
+  - "pip install gevent"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
