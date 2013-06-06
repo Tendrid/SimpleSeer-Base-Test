@@ -21,6 +21,7 @@ before_script:
   - "sudo apt-get install python-opencv"
   - "sudo pip install jsonpickle"
   - "sudo pip install https://github.com/sightmachine/SimpleCV/zipball/develop"
+  - "sudo pip install flask"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
