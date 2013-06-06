@@ -23,6 +23,7 @@ before_script:
   - "sudo pip install https://github.com/sightmachine/SimpleCV/zipball/develop"
   - "sudo pip install flask"
   - "sudo pip install pytz"
+  - "sudo pip install amqplib"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
