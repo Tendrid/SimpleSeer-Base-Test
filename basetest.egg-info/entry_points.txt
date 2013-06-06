@@ -1,0 +1,7 @@
+
+# Define (non-plugin) entry points here
+[seer.plugins.inspection]
+
+[seer.plugins.measurement]
+
+[seer.plugins.watcher]
