@@ -17,6 +17,7 @@ before_script:
   - "sudo pip install mongoengine"
   - "sudo apt-get install python-pygame"
   - "sudo pip install PIL"
+  - "sudo apt-get install python-opencv"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
