@@ -64,3 +64,5 @@ script:
   - "sudo simpleseer deploy"
   - "sudo mongod --config /etc/mongodb.conf"
   - "simpleseer build"
+  - "simpleseer web"
+  - "simpleseer olap"
