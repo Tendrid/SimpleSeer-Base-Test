@@ -22,7 +22,6 @@ before_script:
   - "sudo apt-get install python-gevent"
   - "sudo apt-get install libevent-dev"
   - "sudo apt-get install supervisor"
-  - "sudo apt-get install ipython-notebook"
   - "sudo apt-get install swig"
   - "sudo apt-get install libvpx-dev"
   - "sudo apt-get install subversion"
