@@ -26,4 +26,9 @@ describe("SubView", function() {
     expect(v.subviews[title]).toBeDefined()
   })
 
+  it("should be able to remove subviews", function() {
+    v.clearSubviews()
+    expect(JSON.stringify(v.subviews)).toEqual("{}")
+  })
+
 });

@@ -27,7 +27,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
                     phantom.exit(1);
                 } else {
                     // Condition fulfilled (timeout and/or condition is 'true')
-                    console.log("'waitFor()' finished in " + (new Date().getTime() - start) + "ms.");
+                    //console.log("'waitFor()' finished in " + (new Date().getTime() - start) + "ms.");
                     typeof(onReady) === "string" ? eval(onReady) : onReady(); //< Do what it's supposed to do once the condition is fulfilled
                     clearInterval(interval); //< Stop this interval
                 }
@@ -48,7 +48,7 @@ page.onConsoleMessage = function(msg) {
     console.log(msg);
 };
 
-page.open(system.args[1], function(status){
+page.open(system.args[1], function(status) {
     if (status !== "success") {
         console.log("Unable to access network");
         phantom.exit();
@@ -59,27 +59,55 @@ page.open(system.args[1], function(status){
             });
         }, function(){
             var exitCode = page.evaluate(function(){
-                console.log('');
-                console.log(document.body.querySelector('.description').innerText);
-                var list = document.body.querySelectorAll('.results > #details > .specDetail.failed');
-                if (list && list.length > 0) {
-                  console.log('');
-                  console.log(list.length + ' test(s) FAILED:');
-                  for (i = 0; i < list.length; ++i) {
-                      var el = list[i],
-                          desc = el.querySelector('.description'),
-                          msg = el.querySelector('.resultMessage.fail');
-                      console.log('');
-                      console.log(desc.innerText);
-                      console.log(msg.innerText);
-                      console.log('');
+
+                red   = '\033[0;31m';
+                gray  = '\033[0;32m'
+                reset = '\033[0m';
+
+                console.log("")
+
+                var count = 0;
+                var total = 0;
+                var start = new Date();
+
+                var testSuites = document.body.querySelectorAll(".results > .summary > .suite");
+                recurseSuites(testSuites);
+
+                function recurseSuites(suites) {
+                  if(testSuites && testSuites.length > 0) {
+
+                    for(var i=0; i<testSuites.length; i++) {
+                      var title = testSuites[i].querySelector(".description").innerText;
+                      var status = testSuites[i].className.replace("suite ", "")
+                      console.log("\t" + title);
+
+                      var tests = testSuites[i].querySelectorAll(".specSummary");
+                      for( var a=0; a<tests.length; a++) {
+                        var testTitle = tests[a].querySelector(".description").innerText;
+                        var testStatus = tests[a].className.replace("specSummary ", "");
+                        var ch = (testStatus == "passed" ? "\u2714" : "\033[31m\u2716\033[0m");
+                        if(testStatus == "failed") count++;
+                        total++;
+                        console.log("\t    " + ch + (testStatus == "failed" ? red : gray) + " " + testTitle + reset);
+                      }
+
+                      console.log("");
+                    }
+
                   }
-                  return 1;
-                } else {
-                  console.log(document.body.querySelector('.alert > .passingAlert.bar').innerText);
-                  return 0;
                 }
+
+                var end = new Date();
+                console.log("");
+
+                var tx = (count > 0 ? "\033[31m\u2716 " + count + " of " + total + " tests failed\033[0m" : "\033[32m\u2714 All tests passed\033[0m")
+                console.log("\tTest Suite Finished (" + (end-start) + "ms)")
+                console.log("\t" + tx)
+
+                console.log ("")
+
             });
+
             phantom.exit(exitCode);
         });
     }
