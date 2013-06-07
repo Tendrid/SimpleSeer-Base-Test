@@ -1,6 +1,7 @@
 var _this = this;
 
 var View = require("views/core/view")
+var SubView = require("views/core/subview")
 var Table = require("views/table")
 
 describe("View (views/core/view)", function() {
@@ -20,9 +21,5 @@ describe("View (views/core/view)", function() {
     v.render()
     return expect(v.firstRender).toBe(false);
   });
-
-  it("foo", function() {
-    var t = new Table();
-  })
 
 });
