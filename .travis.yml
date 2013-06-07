@@ -24,6 +24,7 @@ before_script:
   - "sudo pip install flask"
   - "sudo pip install pytz"
   - "sudo pip install amqplib"
+  - "sudo pip install gevent-socketio==0.3.5-beta"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
