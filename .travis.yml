@@ -28,5 +28,5 @@ before_script:
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
-  - "simpleseer deploy"
+  - "sudo simpleseer deploy"
   - "simpleseer build"
