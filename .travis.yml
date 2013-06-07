@@ -30,5 +30,4 @@ script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; source scripts/setup.sh -i; cd .."
   - "sudo simpleseer deploy"
-  - "cd SimpleSeer-Base-Test/brunch_src; brunch build"
   - "simpleseer build"
