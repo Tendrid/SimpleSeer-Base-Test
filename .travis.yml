@@ -66,5 +66,6 @@ script:
   - "sudo simpleseer deploy"
   - "sudo mongod --fork --config /etc/mongodb.conf"
   - "simpleseer build"
-  - "simpleseer web"
+  - "simpleseer web &"
+  - "sleep 20; wget http://127.0.0.1:8080"
   - "simpleseer olap"
