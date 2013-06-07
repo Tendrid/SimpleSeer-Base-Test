@@ -62,5 +62,5 @@ script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; sudo scripts/setup.sh -i; cd .."
   - "sudo simpleseer deploy"
-  - "mongod --config /etc/mongodb.conf"
+  - "sudo mongod --config /etc/mongodb.conf"
   - "simpleseer build"
