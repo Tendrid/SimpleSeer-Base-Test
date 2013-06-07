@@ -3,12 +3,12 @@ var _this = this;
 var View = require("views/core/view")
 var SubView = require("views/core/subview")
 
-describe("View", function() {
+describe("SubView", function() {
 
-  var v = new View();
+  var v = new SubView();
 
-  it("should extend Backbone.View", function() {
-    expect(v instanceof Backbone.View).toBe(true);
+  it("should extend View", function() {
+    expect(v instanceof View).toBe(true);
   });
 
   it("should not have rendered yet", function() {
