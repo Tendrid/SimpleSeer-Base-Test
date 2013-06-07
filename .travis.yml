@@ -28,6 +28,6 @@ before_script:
   - "sudo pip install gevent-socketio==0.3.5-beta"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
-  - "cd SimpleSeer; sudo source scripts/setup.sh -i; cd .."
+  - "cd SimpleSeer; sudo scripts/setup.sh -i; cd .."
   - "sudo simpleseer deploy"
   - "simpleseer build"
