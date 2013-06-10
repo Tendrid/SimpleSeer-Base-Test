@@ -60,6 +60,7 @@ before_script:
   - "sudo pip install pytz"
   - "sudo pip install amqplib"
   - "sudo pip install gevent-socketio==0.3.5-beta"
+  - "sudo apt-get install phantomjs"
 script:
   - "sudo python ./SimpleSeer/setup.py develop"
   - "cd SimpleSeer; sudo scripts/setup.sh -i; cd .."
@@ -68,4 +69,5 @@ script:
   - "simpleseer build"
   - "simpleseer web &"
   - "sleep 20; wget http://127.0.0.1:8080"
-  - "simpleseer olap"
+  - "cd spec; pythom -m SimpleHTTPServer&; cd ../"
+  - "sleep 10; phantomjs spec/lib/run-jasmine.js http://localhost:8000"
