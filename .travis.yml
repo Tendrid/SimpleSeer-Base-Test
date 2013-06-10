@@ -70,6 +70,6 @@ script:
   - "simpleseer web &"
   - "sleep 20; wget http://127.0.0.1:8080"
   - "cd spec;"
-  - "python -m SimpleHTTPServer &
+  - "python -m SimpleHTTPServer &"
   - "cd ../"
   - "sleep 10; phantomjs spec/lib/run-jasmine.js http://localhost:8000"
