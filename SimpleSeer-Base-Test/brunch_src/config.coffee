@@ -19,7 +19,8 @@ exports.config =
         'javascripts/app.js': /^app/
         'javascripts/vendor.js': (path) ->
           e = (/^vendor\/javascripts\/unittest\.js/).test path
-          return !e
+          b = (/^vendor\/tests/).test path
+          return !e || b
       # Defines compilation order.
       # `vendor` files will be compiled before other ones
       # even if they are not present here.
