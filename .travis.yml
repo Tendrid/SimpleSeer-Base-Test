@@ -66,6 +66,7 @@ script:
   - "cd SimpleSeer; sudo scripts/setup.sh -i; cd .."
   - "sudo simpleseer deploy"
   - "sudo mongod --fork --config /etc/mongodb.conf"
+  - "sudo rabbitmq-server"
   - "simpleseer build"
   - "simpleseer web --test=1 &"
   - "sleep 20; phantomjs run-jasmine.js http://localhost:8080/testing"
